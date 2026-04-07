@@ -1,17 +1,17 @@
+/* Base Body Styling */
 body {
     background: linear-gradient(to right, #e3f2fd, #f8f9fa);
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
+/* Container resized to fit 3 columns */
 .form-container {
-    max-width: 700px;
+    max-width: 1100px; 
     margin: 50px auto;
-    padding: 40px;
-    background: #ffffff;
-    border-radius: 12px;
-    box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+    padding: 20px;
 }
 
+/* Form Styles */
 h2 {
     color: #0d6efd;
     font-weight: bold;
@@ -25,7 +25,6 @@ h2 {
 
 .form-control,
 .form-select {
-    margin-bottom: 20px;
     border: 1px solid #ced4da;
     transition: all 0.3s ease;
 }
@@ -39,8 +38,7 @@ h2 {
 .error {
     color: #dc3545;
     font-size: 0.85em;
-    margin-top: -15px;
-    margin-bottom: 15px;
+    margin-top: 5px; 
 }
 
 /* Buttons */
@@ -51,6 +49,7 @@ h2 {
     padding: 10px 20px;
     border-radius: 6px;
     border: none;
+    transition: 0.2s;
 }
 
 .btn-submit:hover {
@@ -64,8 +63,58 @@ h2 {
     padding: 10px 20px;
     border-radius: 6px;
     border: none;
+    transition: 0.2s;
 }
 
 .btn-clear:hover {
     background-color: #e3640c;
+}
+
+/* ========================================= */
+/* RESPONSIVE LAYOUT (Mobile Cards vs Desktop) */
+/* ========================================= */
+
+/* Mobile View: Elevated Cards Layout */
+@media (max-width: 767px) {
+    .responsive-section {
+        background: #ffffff;
+        border: 1px solid #e0e0e0;
+        border-radius: 10px;
+        padding: 20px;
+        margin-bottom: 20px;
+        box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+    }
+    .section-title {
+        font-size: 1.15rem;
+        color: #0d6efd;
+        border-bottom: 2px solid #e9ecef;
+        padding-bottom: 10px;
+        margin-bottom: 15px;
+        font-weight: bold;
+    }
+}
+
+/* Desktop View: Flat Tabular Grid Layout */
+@media (min-width: 768px) {
+    .responsive-section {
+        background: transparent;
+        border: none;
+        padding: 0 15px;
+        box-shadow: none;
+        border-right: 1px solid #dee2e6; /* Column separator */
+    }
+    
+    /* Remove border from the last column */
+    .col-md-4:last-child .responsive-section {
+        border-right: none;
+    }
+    
+    .section-title {
+        font-size: 1.1rem;
+        color: #495057;
+        font-weight: bold;
+        margin-bottom: 15px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
 }
